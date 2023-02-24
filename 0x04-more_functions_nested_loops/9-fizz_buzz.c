@@ -32,8 +32,8 @@ int main(void)
 		}
 		if (p != 100)
 		{
-		printf(" ");
-
+			printf(" ");
+		}
 	}
 	printf("\n");
 
