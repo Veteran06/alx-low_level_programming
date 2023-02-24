@@ -30,9 +30,10 @@ int main(void)
 		{
 			printf("%d", p);
 		}
-		{
+		
 		if (p != 100)
-		printf(' ');
+		{
+		printf(" ");
 		}
 	}
 	printf("\n");
