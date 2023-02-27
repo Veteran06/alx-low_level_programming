@@ -7,18 +7,18 @@
  */
 int _atoi(char *s)
 {
-	int j, k, m, leng, l, digit;
+	int j, k, m, len, l, digit;
 
 	j = 0;
 	k = 0;
 	m = 0;
-	leng = 0;
+	len = 0;
 	l = 0;
 	digit = 0;
 
-	while (s[leng] != '\0')
-		leng++;
-	while (j < leng && l == 0)
+	while (s[len] != '\0')
+		len++;
+	while (j < len && l == 0)
 	{
 		if (s[j] >= '0' && s[j] <= '9')
 		{
