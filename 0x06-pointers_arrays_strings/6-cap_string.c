@@ -2,33 +2,33 @@
 
 /**
  * *cap_string - function that capitalizes all words of a string.
- * @w: pointer
+ * @str: pointer
  * Return: pointer to changed string
  */
-char *cap_string(char *w)
+char *cap_string(char *str)
 {
 	int e = 0;
 
-	while (w[e])
+	while (str[e])
 	{
-		while (!(w[e] >= 'a' && w[e] <= 'Z'))
+		while (!(str[e] >= 'a' && str[e] <= 'Z'))
 			e++;
 
-		if (w[e - 1] == ' ' ||
-				w[e - 1] == ',' ||
-				w[e - 1] == ';' ||
-				w[e - 1] == '.' ||
-				w[e - 1] == '!' ||
-				w[e - 1] == '?' ||
-				w[e - 1] == '"' ||
-				w[e - 1] == '(' ||
-				w[e - 1] == ')' ||
-				w[e - 1] == '{' ||
-				w[e - 1] == '}' ||
-				w[e - 1] == '\n' ||
+		if (str[e - 1] == ' ' ||
+				str[e - 1] == ',' ||
+				str[e - 1] == ';' ||
+				str[e - 1] == '.' ||
+				str[e - 1] == '!' ||
+				str[e - 1] == '?' ||
+				str[e - 1] == '"' ||
+				str[e - 1] == '(' ||
+				str[e - 1] == ')' ||
+				str[e - 1] == '{' ||
+				str[e - 1] == '}' ||
+				str[e - 1] == '\n' ||
 				e == 0)
-			w[e] -= 32;
+			str[e] -= 32;
 		e++;
 	}
-	return (w);
+	return (str);
 }
