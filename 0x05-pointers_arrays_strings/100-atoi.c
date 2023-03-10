@@ -2,40 +2,26 @@
 
 /**
  * _atoi - convert a string to an integer.
- * @s: string to be be converted to an int
- * Return: converted int
+ * @s: string to be converted
+ * Return: string converted to int
  */
 int _atoi(char *s)
 {
-	int j, k, m, len, l, digit;
+	int sign = 1, i = 0;
+	unsigned int res = 0;
 
-	j = 0;
-	k = 0;
-	m = 0;
-	len = 0;
-	l = 0;
-	digit = 0;
-
-	while (s[len] != '\0')
-		len++;
-	while (j < len && l == 0)
+	while (!(s[i] <= '9' && s[i] >= '0') && s[i] != '\0')
 	{
-		if (s[j] >= '0' && s[j] <= '9')
-		{
-			digit = s[j] - '0';
-			if (k % 2)
-				digit = -digit;
-			m = m * 10 + digit;
-			l = 1;
-			if (s[j + 1] < '0' || s[j + 1] > '9')
-				break;
-			l = 0;
-		}
-		j++;
+		if (s[i] == '-')
+			sign *= -1;
+		i++;
 	}
-	if (l == 0)
-		return (0);
-	return (m);
+	while (s[i] <= '9' && (s[i] >= '0' && s[i] != '\0'))
+	{
+		res = (res * 10) + (s[i] - '0');
+		i++;
+	}
+	res *= sign;
+	return (res);
 }
-
 
