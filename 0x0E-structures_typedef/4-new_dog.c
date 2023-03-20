@@ -24,8 +24,9 @@ int _strlen(char *s)
  * to buffer pointed by dest
  * @dest: pointer
  * @src: pointer to dest
+ * Return: pointer to dest
  */
-char *strcpy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
 	int len, i;
 
@@ -50,9 +51,11 @@ char *strcpy(char *dest, char *src)
  * @owner: owner of dog
  * Return: pointer to new dog, NULL otherwise
  */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
+
 	int len 1, len 2;
 
 	len1 = _strlen(name);
