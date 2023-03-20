@@ -5,7 +5,7 @@
  * struct dog - basic info
  * @name: first member
  * @age: second member
- * @ownwe: third member
+ * @owner: third member
  * Description: longer description
  */
 struct dog
@@ -16,7 +16,7 @@ struct dog
 }
 
 /**
- * dog_t - typefef for struct dog
+ * dog_t - typedef for struct dog
  */
 
 typedef struct dog dog_t;
