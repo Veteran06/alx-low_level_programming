@@ -1,7 +1,7 @@
 #include "function_pointers.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <"3-calc.h>
+#include "3-calc.h"
 
 /**
  * main - prints result of simple operations
@@ -9,7 +9,8 @@
  * @argv: array of pointers
  * Return: 0
  */
-int main(int__attribute__((__unused__))argc, char *argv[])
+int main(int__attribute__((__unused__)) argc, char *argv[])
+
 {
 	int num1, num2;
 	char *op;
