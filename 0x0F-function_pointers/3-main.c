@@ -5,11 +5,11 @@
 
 /**
  * main - prints result of simple operations
- * @argc: number of arguments
+ * @argc: number of arguments supplied by program
  * @argv: array of pointers
  * Return: 0
  */
-int main(int__attribute__((__unused__)) argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 
 {
 	int num1, num2;
