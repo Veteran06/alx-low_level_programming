@@ -1,12 +1,11 @@
 #include "variadic_functions.h"
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdarg.h>
 
 /**
- * print_all - prints anything
+ * print_all - function that prints anything
  * @format: list of types of arguments passed to the function
  */
-
 void print_all(const char * const format, ...)
 {
 	int w = 0;
@@ -35,7 +34,7 @@ void print_all(const char * const format, ...)
 					str = va_arg(list, char *);
 					if (!str)
 						str = "(nil)";
-					printf("%S%s", sep, str);
+					printf("%s%s", sep, str);
 					break;
 				default:
 					w++;
