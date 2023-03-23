@@ -23,7 +23,6 @@ void print_all(const char * const format, ...)
 			{
 				printf(", ");
 				break;
-
 			} k++;
 		}
 		switch (format[w])
@@ -46,7 +45,6 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", str);
 				break;
-
 		} w++;
 	}
 	printf("\n"), va_end(valist);
