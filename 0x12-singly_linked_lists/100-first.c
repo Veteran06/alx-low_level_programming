@@ -6,6 +6,6 @@
  */
 void __attribute__((constructor)) bmain()
 {
-	printf("You're beat! and yet, you must allow");
-	printf(",\nl bore my house upon my back!/n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf(" bore my house upon my back!/n");
 }
