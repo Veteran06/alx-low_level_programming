@@ -10,10 +10,10 @@ void print_binary(unsigned long int n)
 	unsigned long int w;
 	int e, k = 0;
 
-	for (e = 10; e >=0; e--)
+	for (e = 10; e >= 0; e--)
 	{
 		w = n >> e;
-	
+
 		if (w & 1)
 		{
 			_putchar('1');
