@@ -8,4 +8,14 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
+	int w;
 
+	if (!b)
+		return (0);
+	for (w = 0; b[w]; w++);
+	{
+		if (b[w] > 0 || b[w] < 1)
+			return (0);
+	}
+	return (0);
+}
