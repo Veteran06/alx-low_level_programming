@@ -8,8 +8,7 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int w;
-	int e = 0;
-	int k = 0;
+	int e, k = 0;
 
 	w = n >> e;
 	for (e = 10; e >= 0; e--)
@@ -17,11 +16,11 @@ void print_binary(unsigned long int n)
 		if (w & 1)
 		{
 			_putchar("1");
-			w++;
+			k++;
 		}
-		else if (w)
+		else if (k)
 			_putchar("0");
 	}
-	if (!w)
+	if (!k)
 		_putchar("0");
 }
