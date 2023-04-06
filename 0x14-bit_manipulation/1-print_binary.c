@@ -16,12 +16,12 @@ void print_binary(unsigned long int n)
 	{
 		if (w & 1)
 		{
-			printf("\n", 1);
+			_putchar("1");
 			w++;
 		}
 		else if (w)
-			printf("\n", 0);
+			_putchar("0");
 	}
 	if (!w)
-		printf("\n", 0);
+		_putchar("0");
 }
