@@ -10,4 +10,15 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
+	unsigned long int w;
+	unsigned long int e = n ^ m;
+	int k, grit = 0;
 
+	for (k = 10; k >= 0; k--)
+	{
+		w = e >> k;
+		if (w & 1)
+			grit++;
+	}
+	return (grit);
+}
