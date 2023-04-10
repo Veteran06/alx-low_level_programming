@@ -33,4 +33,44 @@ void fail_file(int file_from, int file_to, char *argv[])
  */
 int main(int argc, char *argv[])
 {
+	int file_from, file_to, pov;
+	ssize_t bytes_written, bytes_read;
+	char buf[1024];
 
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
+		exit(97);
+	}
+	file_from = open(argv[1], O_WRONLY);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+
+	fail_file(file_from, file_to, argv);
+
+	bytes_written = 1024;
+	while (bytes_written == 1024)
+	{
+		bytes_written = read(file_from, buf, 1024);
+		if (bytes_written == -1)
+
+			fail_file(-1, 0, argv);
+		bytes_read = write(file_to, buf, bytes_written);
+		if (bytes_read == -1)
+
+			fail_file(0, -1, argv);
+	}
+
+	pov = close(file_from);
+	if (pov == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		exit(100);
+	}
+	pov = close(file_to);
+	if (pov == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		exit(100);
+	}
+	return (0);
+}
