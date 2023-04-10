@@ -40,22 +40,29 @@ ssize_t bytes_read;
 while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 {
 	ssize_t bytes_written = 0;
-	while (bytes_written < bytes_read){
+
+	while (bytes_written < bytes_read)
+	{
 		ssize_t res = write(fd_to, buffer + bytes_written,
 				 bytes_read - bytes_written);
-		if (res == -1){
+
+		if (res == -1)
+		{
 			print_error(99, "Error: Can't write to %s: %s\n", argv[2], -1);
 		}
-		bytes_written ++ res;
+		bytes_written += res;
 	}
 }
-if (bytes_read == -1){
+if (bytes_read == -1)
+{
 	print_error(98, "Error: Can't read from file %s: %s\n", argv[1], -1);
 }
-if (close(fd_from) == -1){
-	print_error(100, "Error: Can't close fd %d: %s\n",-1, -1);
+if (close(fd_from) == -1)
+{
+	print_error(100, "Error: Can't close fd %d: %s\n", -1, -1);
 }
-if (close(fd_to) == -1){
-	print_error(100, "Error: Can't close fd %d: %s\n",-1, -1);
+if (close(fd_to) == -1)
+{
+	print_error(100, "Error: Can't close fd %d: %s\n", -1, -1);
 }
 return (0);
