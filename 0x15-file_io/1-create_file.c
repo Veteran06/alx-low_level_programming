@@ -12,7 +12,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd;/* stands for file descriptor*/
 	int w;
-	int wr;/* to represent write*/
+	int wr;
 
 	if (filename == NULL)
 		return (-1);
@@ -27,7 +27,7 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	if (text_content == NULL)
-		text_content = " ";
+		text_content = "";
 
 	for (w = 0; text_content[w]; w++)
 		wr = write(fd, text_content, w);
