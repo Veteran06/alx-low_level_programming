@@ -23,14 +23,14 @@ int create_file(const char *filename, char *text_content)
 	 * 0600 gives permission to owner to write and read
 	 */
 
-	if (fd == NULL)
+	if (fd == -1)
 		return (-1);
 
 	if (text_content == NULL)
 		text_content = " ";
 	
 	for (w = 0; text_content[w]; w++)
-		wr = (fd, w, text_content);
+		wr = write(fd, w, text_content);
 
 	if (wr == -1)
 		return (-1);
