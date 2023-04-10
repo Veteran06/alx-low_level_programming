@@ -4,6 +4,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <unistd.h>
+#include "main.h"
 
 /**
  * fail_file  - if files has error
