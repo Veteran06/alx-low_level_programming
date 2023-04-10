@@ -12,7 +12,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	ssize_t RD, WR;/* RD stands for read, WR stands for write */
+	ssize_t rd, wr;
 	char *w;
 
 	if (filename == NULL)
@@ -26,11 +26,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (w == NULL)
 		return (0);
 
-	RD = read(fd, w, letters);
-	WR = write(STDOUT_FILENO, w, RD);
+	rd = read(fd, w, letters);
+	wr = write(STDOUT_FILENO, w, rd);
 
 	close(fd);
 	free(w);
 
-	return (WR);
+	return (wr);
 }
