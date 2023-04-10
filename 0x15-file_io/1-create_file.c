@@ -30,7 +30,7 @@ int create_file(const char *filename, char *text_content)
 		text_content = " ";
 	
 	for (w = 0; text_content[w]; w++)
-		wr = write(fd, w, text_content);
+		wr = write(fd, text_content, w);
 
 	if (wr == -1)
 		return (-1);
